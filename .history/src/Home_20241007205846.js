@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+// import React, { useEffect, useRef } from 'react';
 import { Container, Button, Col, Row } from 'react-bootstrap';
 import azienda from './img/azienda.jpg';
 import Map from './Components/GoogleMaps';
@@ -8,35 +8,97 @@ import styled, { keyframes } from 'styled-components';
 import doosan from './img/doosan.png';
 import biglia from './img/biglia.png';
 
-const StyledImageTop = styled.img`
-  width: 100%;
-  height: auto;
-  top: 0;
-  left: 0;
-  transform: translateY(-50%);
-  opacity: 0;
-  margin-top: 6rem;
+// const StyledRedBlockContainer = styled(Container)`
+//   @media (max-width: 1440px) {
+//     height: 150vh;
+//   }
+// `;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 0rem;
-  }
-`;
+// const StyledImageTop = styled.img`
+//   width: 100%;
+//   height: auto;
+//   top: 0;
+//   left: 0;
+//   transform: translateY(-50%);
+//   opacity: 0;
+//   margin-top: 0rem;
 
-const StyledImageBottom = styled.img`
-  width: 100%;
-  height: auto;
-  margin-top: 0;
-  bottom: 0;
-  right: 0;
-  transform: translateY(50%);
-  opacity: 0;
+//   @media (max-width: 2560px) {
+//     width: 85%;
+//     margin-top: -2rem;
+//   }
 
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-top: -8rem;
-  }
-`;
+//   @media (max-width: 1440px) {
+//     width: 100%;
+//     margin-top: -2rem;
+//   }
+
+//   @media (max-width: 768px) {
+//     width: 100%;
+//     margin-top: 0rem;
+//   }
+//   @media (max-width: 686px) {
+//     width: 60%;
+//     margin-top: 1rem;
+//   }
+
+//   @media (max-width: 425px) {
+//     width: 100%;
+//     margin-top: 1rem;
+//   }
+
+//   @media (max-width: 375px) {
+//     width: 100%;
+//     margin-top: 1rem;
+//   }
+//   @media (max-width: 320px) {
+//     width: 100%;
+//     margin-top: 1rem;
+//   }
+// `;
+
+// const StyledImageBottom = styled.img`
+//   width: 100%;
+//   height: auto;
+//   margin-top: 10rem;
+//   bottom: 0;
+//   right: 0;
+//   transform: translateY(50%);
+//   opacity: 0;
+
+//   @media (max-width: 2560px) {
+//     width: 100%;
+//     margin-top: 0rem;
+//   }
+//   @media (max-width: 1440px) {
+//     width: 100%;
+//     margin-top: 0rem;
+//   }
+//   @media (max-width: 768px) {
+//     width: 100%;
+//     margin-top: 8rem;
+//   }
+//   @media (max-width: 686px) {
+//     width: 60%;
+//     margin-top: -10rem;
+//     margin-left: 18rem;
+//   }
+//   @media (max-width: 425px) {
+//     width: 100%;
+//     margin-top: -5rem;
+//     margin-left: 0rem;
+//   }
+//   @media (max-width: 375px) {
+//     width: 100%;
+//     margin-top: 0rem;
+//     margin-left: 0rem;
+//   }
+//   @media (max-width: 320px) {
+//     width: 100%;
+//     margin-top: 0rem;
+//     margin-left: 0rem;
+//   }
+// `;
 
 const StyledContainer = styled(Container)`
   @media (max-width: 320px), {
@@ -45,38 +107,38 @@ const StyledContainer = styled(Container)`
 `;
 
 export const Home = () => {
-  const topImageRef = useRef(null);
-  const bottomImageRef = useRef(null);
+  //   const topImageRef = useRef(null);
+  //   const bottomImageRef = useRef(null);
 
-  useEffect(() => {
-    const topImage = topImageRef.current;
-    const bottomImage = bottomImageRef.current;
+  //   useEffect(() => {
+  //     const topImage = topImageRef.current;
+  //     const bottomImage = bottomImageRef.current;
 
-    const handleScroll = () => {
-      const topImageRect = topImage.getBoundingClientRect();
-      const bottomImageRect = bottomImage.getBoundingClientRect();
+  //     const handleScroll = () => {
+  //       const topImageRect = topImage.getBoundingClientRect();
+  //       const bottomImageRect = bottomImage.getBoundingClientRect();
 
-      // Проверяем, виден ли верхний блок изображения
-      if (topImageRect.top < window.innerHeight && topImageRect.bottom >= 0) {
-        topImage.style.opacity = '1';
-        topImage.style.transform = 'translateY(0)';
-      }
+  //       // Проверяем, виден ли верхний блок изображения
+  //       if (topImageRect.top < window.innerHeight && topImageRect.bottom >= 0) {
+  //         topImage.style.opacity = '1';
+  //         topImage.style.transform = 'translateY(0)';
+  //       }
 
-      // Проверяем, виден ли нижний блок изображения
-      if (bottomImageRect.top < window.innerHeight && bottomImageRect.bottom >= 0) {
-        bottomImage.style.opacity = '1';
-        bottomImage.style.transform = 'translateY(0)';
-      }
-    };
+  //       // Проверяем, виден ли нижний блок изображения
+  //       if (bottomImageRect.top < window.innerHeight && bottomImageRect.bottom >= 0) {
+  //         bottomImage.style.opacity = '1';
+  //         bottomImage.style.transform = 'translateY(0)';
+  //       }
+  //     };
 
-    window.addEventListener('scroll', handleScroll);
-    // Вызываем событие, чтобы проверить видимость при загрузке страницы
-    handleScroll();
+  //     window.addEventListener('scroll', handleScroll);
+  //     // Вызываем событие, чтобы проверить видимость при загрузке страницы
+  //     handleScroll();
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //     return () => {
+  //       window.removeEventListener('scroll', handleScroll);
+  //     };
+  //   }, []);
   return (
     <>
       {/* Slider */}
@@ -99,7 +161,7 @@ export const Home = () => {
       {/* Блок с фоном и текстом */}
       <Container
         fluid
-        className="text-white py-2"
+        className="text-white py-4"
         style={{ background: 'linear-gradient(to right, red, black)', height: '90vh' }}>
         <h1
           style={{
@@ -108,14 +170,14 @@ export const Home = () => {
             marginLeft: '2rem',
             paddingLeft: '1rem',
           }}>
-          Avanzamento
+          Avanzamentooo
         </h1>
-        <Row>
+        <Row xs={1} md={1} lg={2} xl={2}>
           <Col md={6}>
-            <StyledImageBottom ref={bottomImageRef} src={biglia} alt="Biglia" />
+            <img style={{ height: '90%' }} src={doosan} alt="Azienda" className="img-fluid mt-2" />
           </Col>
           <Col md={6} style={{ paddingTop: '2rem' }}>
-            <StyledImageTop ref={topImageRef} src={doosan} alt="Doosan" />
+            <img style={{ height: '90%' }} src={biglia} alt="Azienda" className="img-fluid mt-2" />
           </Col>
         </Row>
       </Container>

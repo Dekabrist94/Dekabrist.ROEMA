@@ -170,7 +170,7 @@ export const Home = () => {
             marginLeft: '2rem',
             paddingLeft: '1rem',
           }}>
-          Avanzamento
+          Avanzamentooo
         </h1>
         <Row xs={1} md={1} lg={2} xl={2}>
           <Col md={6}>
